@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <windows.h>
 int main() {
 	int n, m;
 	scanf("%d %d", &n, &m);
@@ -31,7 +30,7 @@ int main() {
 	for(int i = 0; i < m; i++) {
         fprintf(f, "%d ", b[i]);
 	}
-	fprintf(g, "#!/bin/usr/env python3\n");
+	fprintf(g, "#!/usr/bin/env python3\n");
 	fprintf(g, "from itertools import product\n");
 	fprintf(g, "f = open('vector.in', 'r')\n");
 	fprintf(g, "q = open('vector.out', 'w')\n");
@@ -43,15 +42,15 @@ int main() {
 	fprintf(g, "\tq.write(str(result[i][0]) + ', ' + str(result[i][1]) + '\\n')\n");
 	fprintf(g, "f.close()\n");
 	fprintf(g, "q.close()");
-	system("sudo su");
-    system("chmod 777 product.py");
-	system("./product.py");
-	fclose(g);
 	free(a);
 	free(b);
 	fclose(g);
 	fclose(f);
-	Sleep(1000);
+	system("sudo su");
+    	system("chmod 777 product.py");
+	system("./product.py");
+	//fclose(g);
+	for (int i = 0; i < 10000; i++);
 	f = fopen("vector.out", "r");
 	int count;
 	fscanf(f, "%d", &count);
